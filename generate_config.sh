@@ -53,8 +53,8 @@ MAILCOW_HOSTNAME=${MAILCOW_HOSTNAME}
 # ------------------------------
 # SQL database configuration
 # ------------------------------
-DBNAME=mailcow
-DBUSER=mailcow
+DBNAME=$(</dev/urandom tr -dc A-Za-z0-9 | head -c 10)
+DBUSER=$(</dev/urandom tr -dc A-Za-z0-9 | head -c 10)
 
 # Please use long, random alphanumeric strings (A-Za-z0-9)
 DBPASS=$(</dev/urandom tr -dc A-Za-z0-9 | head -c 28)
@@ -93,7 +93,7 @@ SQL_PORT=127.0.0.1:13306
 TZ=${TZ}
 
 # Fixed project name
-COMPOSE_PROJECT_NAME=mailcow-dockerized
+COMPOSE_PROJECT_NAME=dimail
 
 # Additional SAN for the certificate
 ADDITIONAL_SAN=
@@ -106,7 +106,7 @@ SKIP_LETS_ENCRYPT=n
 SKIP_IP_CHECK=n
 
 # Skip ClamAV (clamd-mailcow) anti-virus (Rspamd will auto-detect a missing ClamAV container) - y/n
-SKIP_CLAMD=n
+SKIP_CLAMD=y
 
 # Enable watchdog (watchdog-mailcow) to restart unhealthy containers (experimental)
 USE_WATCHDOG=n
@@ -129,7 +129,7 @@ IPV6_NETWORK=fd4d:6169:6c63:6f77::/64
 # mailcow-network will still be created as IPv6 enabled, all containers will be created
 # without IPv6 support.
 # Use 1 for disabled, 0 for enabled
-SYSCTL_IPV6_DISABLED=0
+SYSCTL_IPV6_DISABLED=1
 
 EOF
 
