@@ -23,8 +23,7 @@ $_SESSION['return_to'] = $_SERVER['REQUEST_URI'];
       <div class="panel panel-default">
         <div class="panel-heading"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <?= $lang['login']['login']; ?></div>
         <div class="panel-body">
-          <div class="text-center mailcow-logo"><img src="<?=($main_logo = customize('get', 'main_logo')) ? $main_logo : '/img/cow_mailcow.svg';?>" alt="mailcow"></div>
-          <legend><?=$UI_TEXTS['main_name'];?></legend>
+          <legend><center><?=$UI_TEXTS['main_name'];?></center></legend>
             <form method="post" autofill="off">
             <div class="form-group">
               <label class="sr-only" for="login_user"><?= $lang['login']['username']; ?></label>
@@ -65,7 +64,7 @@ $_SESSION['return_to'] = $_SERVER['REQUEST_URI'];
             <?php
             endif;
             ?>
-          <legend><?=$UI_TEXTS['apps_name'];?></legend>
+          <legend><center><?=$UI_TEXTS['apps_name'];?></center></legend>
           <?php
           foreach ($MAILCOW_APPS as $app):
           ?>
@@ -86,25 +85,7 @@ $_SESSION['return_to'] = $_SERVER['REQUEST_URI'];
         </div>
       </div>
     </div>
-    <div class="col-md-offset-3 col-md-6">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <a data-toggle="collapse" href="#collapse1"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> <?= $lang['start']['help']; ?></a>
-        </div>
-        <div id="collapse1" class="panel-collapse collapse">
-          <div class="panel-body">
-            <?php if ($UI_TEXTS['help_text']): ?>
-            <p><?=$UI_TEXTS['help_text'];?></p>
-            <?php else: ?>
-            <p><span style="border-bottom: 1px dotted #999;"><?=$UI_TEXTS['main_name'];?></span></p>
-            <p><?= $lang['start']['mailcow_panel_detail']; ?></p>
-            <p><span style="border-bottom: 1px dotted #999;"><?=$UI_TEXTS['apps_name'];?></span></p>
-            <p><?= $lang['start']['mailcow_apps_detail']; ?></p>
-            <?php endif; ?>
-          </div>
-        </div>
-      </div>
-    </div>
+
   </div>
 </div><!-- /.container -->
 <script src="js/index.js"></script>
