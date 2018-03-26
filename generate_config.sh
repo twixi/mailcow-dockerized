@@ -24,7 +24,7 @@ if [[ -f mailcow.conf ]]; then
 fi
 
 if [ -z "$MAILCOW_HOSTNAME" ]; then
-  read -p "Hostname (FQDN - example.org is not a valid FQDN): " -ei "mx.example.org" MAILCOW_HOSTNAME
+  read -p "Hostname (FQDN - example.org is not a valid FQDN): " -ei "mail.dimboy.com" MAILCOW_HOSTNAME
 fi
 
 if [[ -a /etc/timezone ]]; then
@@ -34,7 +34,7 @@ elif  [[ -a /etc/localtime ]]; then
 fi
 
 if [ -z "$TZ" ]; then
-  read -p "Timezone: " -ei "Europe/Berlin" TZ
+  read -p "Timezone: " -ei "Europe/Kiev" TZ
 else
   read -p "Timezone: " -ei ${TZ} TZ
 fi
@@ -129,7 +129,7 @@ IPV6_NETWORK=fd4d:6169:6c63:6f77::/64
 # mailcow-network will still be created as IPv6 enabled, all containers will be created
 # without IPv6 support.
 # Use 1 for disabled, 0 for enabled
-SYSCTL_IPV6_DISABLED=1
+SYSCTL_IPV6_DISABLED=0
 
 EOF
 
