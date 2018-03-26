@@ -53,8 +53,8 @@ MAILCOW_HOSTNAME=${MAILCOW_HOSTNAME}
 # ------------------------------
 # SQL database configuration
 # ------------------------------
-DBNAME=$(</dev/urandom tr -dc A-Za-z0-9 | head -c 10)
-DBUSER=$(</dev/urandom tr -dc A-Za-z0-9 | head -c 10)
+DBNAME=dbname
+DBUSER=dbuser
 
 # Please use long, random alphanumeric strings (A-Za-z0-9)
 DBPASS=$(</dev/urandom tr -dc A-Za-z0-9 | head -c 28)
