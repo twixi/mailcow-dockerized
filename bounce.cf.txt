@@ -1,0 +1,74 @@
+failure_template = <<EOF
+Charset: us-ascii
+From: MAILER-DAEMON (Mail Delivery System)
+Subject: Undelivered Mail Returned to Sender
+Postmaster-Subject: Postmaster Copy: Undelivered Mail
+
+This is the mail system at host $myhostname.
+
+I'm sorry to have to inform you that your message could not
+be delivered to one or more recipients. It's attached below.
+
+For further assistance, please send mail to postmaster.
+
+If you do so, please include this problem report. You can
+delete your own text from the attached returned message.
+
+                   The mail system
+EOF
+
+delay_template = <<EOF
+Charset: us-ascii
+From: MAILER-DAEMON (=?UTF-8?B?0KHQuNGB0YLQtdC80LAg0LTQvtGB0YLQsNCy0LrQuCDQv9C+0YjRgtC4?=)
+Subject: =?UTF-8?B?0JfQsNGC0YDQuNC80LrQsCDQv9C+0YjRgtC4ICjQstGB0LUg0YnQtSDQv9C+0LLRgtC+0YDRjtGU0YLRjNGB0Y8p?=
+Postmaster-Subject: =?UTF-8?B?0J/QvtC/0LXRgNC10LTQttC10L3QvdGPOiDQl9Cw0YLRgNC40LzQutCwINC/0L7RiNGC0Lg=?=
+
+Це поштова система на хості $myhostname.
+
+####################################################################
+# ЦЕ ТІЛЬКИ ПОПЕРЕДЖЕННЯ. ВАМ НЕ ПОТРІБНО ЗНОВУ НАДСИЛАТИ ВАШЕ ПОВІДОМЛЕННЯ. #
+####################################################################
+
+Ваше повідомлення не може бути доставлено більше ніж $delay_warning_time_hours годин(у).
+Це буде повторюватися, доки не пройде $maximal_queue_lifetime_days днів.
+
+Для отримання додаткової допомоги відправте пошту поштовому майстру.
+
+Якщо це так, включіть цей звіт про проблему. Ви можеште
+видалити свій текст із прикріпленого повідомлення.
+
+                   Поштова система
+EOF
+
+
+#
+
+success_template = <<EOF
+Charset: us-ascii
+From: MAILER-DAEMON (=?UTF-8?B?0KHQuNGB0YLQtdC80LAg0LTQvtGB0YLQsNCy0LrQuCDQv9C+0YjRgtC4?=)
+Subject: =?UTF-8?B?0JfQstGW0YIg0L/RgNC+INGD0YHQv9GW0YjQvdGDINC00L7RgdGC0LDQstC60YMg0J/QvtGI0YLQuA==?=
+
+Це поштова система на хості $myhostname.
+
+Ваше повідомлення успішно доставлено до місць призначення перерахованих нижче.
+Якщо повідомлення було доставлено до поштової скриньки, ви не будетеотримувати 
+жодних додаткових повідомлень. В іншому випадку ви можете отримати повідомлення
+про помилки доставку пошти з інших систем.
+
+                   Поштова система
+EOF
+
+
+#
+
+verify_template = <<EOF
+Charset: us-ascii
+From: MAILER-DAEMON (=?UTF-8?B?0KHQuNGB0YLQtdC80LAg0LTQvtGB0YLQsNCy0LrQuCDQv9C+0YjRgtC4?=)
+Subject: =?UTF-8?B?0JfQstGW0YIg0L/RgNC+INGB0YLQsNC9INC00L7RgdGC0LDQstC60Lgg0L/QvtGI0YLQuA==?=
+
+Це поштова система на хості $myhostname.
+
+Додано звіт про доставку пошти, на який ви надіслали запит.
+
+                   Поштова система
+EOF
